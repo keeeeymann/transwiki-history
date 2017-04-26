@@ -124,7 +124,7 @@ function displayNoMatch(historyArray, isFromEN) {
 
         //content
         for (let i = 0, contentRow = newRow; i < histEntry.content.length; i++) {
-            contentRow.insertCell(3).textContent = histEntry.content[i];
+            contentRow.getCellAt(3).textContent = histEntry.content[i];
             if (i + 1 < histEntry.content.length)
                 contentRow = resultTable.insertRow();
         }
