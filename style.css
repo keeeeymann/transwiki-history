@@ -1,0 +1,51 @@
+#section_input {
+	height: 70vh;
+	overflow: auto;
+}
+#section_output {
+	height: 70vh;
+	overflow: auto;
+}
+.floating_blocks {
+	float: left;
+	width: 50%;
+	height: 80%;
+}
+.input_region {
+	width: 95%;
+	height: 100%;
+}
+.output_region {
+	width: 95%;
+	height: 100%;
+}
+#section_ctrl {
+    width: 50%;
+}
+thead{
+	background-color: lightgray;
+	text-align: center;
+}
+tr {
+	vertical-align: top;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-width: thin;
+}
+td {
+	padding: 3px;
+}
+th {
+	text-align: left;
+}
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.devcycle_header{
+	background-color: lightskyblue;
+	text-align: center;
+}
+body {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

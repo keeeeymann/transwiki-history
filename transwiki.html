@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Wiki {{History}} Translation Tool</title>
+</head>
+
+<body>
+    <h1>Wiki {{History}} Translation Tool</h1>
+    <div id="section_input">
+        <div id="inputarea_en" class="floating_blocks">
+            <h2>Wiki source code from EN</h2>
+            <textarea id="wikisrc_en" placeholder="Text from EN" class="input_region"></textarea>
+        </div>
+        <div id="inputarea_zh" class="floating_blocks">
+            <h2>Wiki source code from ZH</h2>
+            <textarea id="wikisrc_zh" placeholder="Text from ZH" class="input_region"></textarea>
+        </div>
+    </div>
+    <div id="section_ctrl">
+        <input id="submit_compare" type="button" value="Compare" onclick="buttonCompare()" />
+        <input id="submit_export" type="button" value="Export" onclick="buttonExport()" style="display: none" />
+        <input id="submit_clear" type="button" value="Clear" onclick="globalReset()" style="display: none" />
+    </div>
+    <div id="section_output" style="display: none">
+        <div id="output_main" class="floating_blocks">
+            <h2>Wiki source output</h2>
+            <textarea id="wikisrc_out_main" class="output_region"></textarea>
+        </div>
+        <div id="output_ref" class="floating_blocks">
+            <h2>Matched entries reference</h2>
+            <textarea id="wikisrc_out_ref" class="output_region"></textarea>
+        </div>
+    </div>
+    <div id="section_compare" style="display: none">
+        <h2>Compare Results</h2>
+        <div id="compare_output">
+            <div id="result_match">
+                <h3>Matched Entries</h3>
+                <table id="result_table_match">
+                    <thead>
+                        <tr>
+                            <td>version</td>
+                            <td>snapshot</td>
+                            <td></td>
+                            <td>content</td>
+                            <td></td>
+                            <td>zh content</td>
+                        </tr>
+                    </thead>
+                    <tbody id="result_table_match_tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div id="result_unmatch_en">
+                <h3>Entries from EN</h3>
+                <table id="result_table_nomatch_en">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>version</td>
+                            <td>snapshot</td>
+                            <td>content</td>
+                        </tr>
+                    </thead>
+                    <tbody id="result_table_nomatch_en_tbody">
+                    </tbody>
+                </table>
+            </div>
+            <div id="result_unmatch_zh">
+                <h3>Entries from ZH</h3>
+                <table id="result_table_nomatch_zh">
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td>version</td>
+                            <td>snapshot</td>
+                            <td>content</td>
+                        </tr>
+                    </thead>
+                    <tbody id="result_table_nomatch_zh_tbody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div><input id="submit_rematch" type="button" value="Re-match" onclick="buttonRematch()" /></div>
+    </div>
+    <div id="section_rematch" style="display: none">
+        <h2>Manual Matchings</h2>
+        <table id="result_table_rematch">
+            <thead>
+                <tr>
+                    <td>devCycle</td>
+                    <td>version</td>
+                    <td>snapshot</td>
+                    <td>&lt;==&gt;</td>
+                    <td>devCycle</td>
+                    <td>version</td>
+                    <td>snapshot</td>
+                </tr>
+            </thead>
+            <tbody id="result_table_rematch_tbody">
+            </tbody>
+        </table>
+    </div>
+</body>
+<script src="js/historyDisplay.js"></script>
+<script src="js/historyCompare.js"></script>
+<script src="js/historyGenerate.js"></script>
+<script src="js/interface.js"></script>
+
+<link href="style.css" type="text/css" rel="stylesheet" />
+
+</html>
