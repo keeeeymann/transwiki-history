@@ -84,6 +84,7 @@ function historyExport(historyArray) {
                 console.assert(false, 'historyExport(): error: unknown matchStatus');
         }
         out.main += entryText + '}}\n';
+        out.main += '{{history|foot}}';
         //rematch reference
         if (histEntry.matchStatus == MATCHSTATUS_REMATCH) {
             out.ref += histEntry.devCycle + '|' + histEntry.ver + '|' + (histEntry.snap ? histEntry.snap : '') + ' ==>\n\t' +
@@ -91,7 +92,7 @@ function historyExport(historyArray) {
                 (histEntry.rematchEntry.snap ? histEntry.rematchEntry.snap + '|' : '') +
                 (histEntry.rematchEntry.link ? histEntry.rematchEntry.link + '|' : '') +
                 (histEntry.rematchEntry.slink ? histEntry.rematchEntry.slink + '|' : '') +
-                histEntry.rematchEntry.content.join('\n|') + '\n';
+                histEntry.rematchEntry.content.join('\n\t|') + '\n';
         }
     }
     return out;

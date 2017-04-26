@@ -81,7 +81,8 @@ function historyTextProcess(historyString) {
     return sectionArray;
 }
 
-//Generate an array of HistoryEntry from an array of trimmed argument text 
+//Generate an array of HistoryEntry from an array of trimmed argument text
+//ignores {{history|foot}} because of structure
 function loadHistoryEntriesFromArray(historySectionArray) {
     if (!(historySectionArray instanceof Array)) {
         console.assert(false, 'loadHistoryEntriesFromArray(): input error: not an array');
@@ -104,8 +105,8 @@ function loadHistoryEntriesFromArray(historySectionArray) {
 
         //read development Cycle
         if (entryArray[1]) {
-            entryObject.devCycle = entryArray[1];
-            lastDevCycle = entryArray[1];
+            entryObject.devCycle = entryArray[1].trim().toLowerCase();
+            lastDevCycle = entryObject.devCycle;
         }
         else
             entryObject.devCycle = lastDevCycle;
